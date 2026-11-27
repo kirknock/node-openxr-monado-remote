@@ -10,7 +10,7 @@ press/release events over a WebSocket.
 ## Install and run
 
 ```bash
-npm install -g nodexr-monado-web-remote          # or: npm install -g ./nodexr-monado-web-remote-0.3.0.tgz
+npm install -g nodexr-monado-web-remote          # or: npm install -g ./nodexr-monado-web-remote-<version>.tgz
 P_OVERRIDE_ACTIVE_CONFIG=remote monado-service   # Monado with the remote driver
 nodexr-monado-web-remote                         # prints the control page URLs
 ```

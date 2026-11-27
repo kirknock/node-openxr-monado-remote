@@ -1,6 +1,6 @@
 {
   "name": "nodexr-monado-web-remote",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Web control panel for Monado's remote driver: move the simulated HMD and controllers with on-screen buttons (Node.js port of remote-mndset).",
   "keywords": [
     "monado",
