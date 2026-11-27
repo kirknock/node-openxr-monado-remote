@@ -3,12 +3,12 @@
 
 import { parseArgs } from 'node:util';
 import { startServer } from '../src/server.js';
-import { PACKAGE_JSON, defaultSettingsFile } from '../src/config.js';
+import { APP_NAME, PACKAGE_JSON, defaultSettingsFile } from '../src/config.js';
 
 const HELP = `${PACKAGE_JSON.name} ${PACKAGE_JSON.version}
 ${PACKAGE_JSON.description}
 
-Usage: ${PACKAGE_JSON.name} [options]
+Usage: ${APP_NAME} [options]
 
 Options:
   -H, --host <addr>        address for the web page        (default 0.0.0.0, env HTTP_HOST)

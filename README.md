@@ -1,4 +1,4 @@
-# nodexr-monado-web-remote
+# @kirknock/nodexr-monado-web-remote
 
 Web control panel for [Monado](https://monado.dev/)'s **remote driver** — a Node.js port of
 [remote-mndset](https://github.com/kwahoo2/remote-mndset). Instead of grabbing keyboard and mouse, every
@@ -10,12 +10,12 @@ press/release events over a WebSocket.
 ## Install and run
 
 ```bash
-npm install -g nodexr-monado-web-remote          # or: npm install -g ./nodexr-monado-web-remote-<version>.tgz
-P_OVERRIDE_ACTIVE_CONFIG=remote monado-service   # Monado with the remote driver
-nodexr-monado-web-remote                         # prints the control page URLs
+npm install -g @kirknock/nodexr-monado-web-remote  # or: npm install -g ./kirknock-nodexr-monado-web-remote-<version>.tgz
+P_OVERRIDE_ACTIVE_CONFIG=remote monado-service    # Monado with the remote driver
+nodexr-monado-web-remote                          # prints the control page URLs
 ```
 
-Without installing: `npx nodexr-monado-web-remote`.
+Without installing: `npx @kirknock/nodexr-monado-web-remote`.
 
 Open the page, check host/port (default `127.0.0.1:4242`), press **Connect**, start your OpenXR app.
 
@@ -36,8 +36,8 @@ nodexr-monado-web-remote [options]
 No Monado at hand? `nodexr-monado-mock [port]` starts a fake remote driver (default port 4242) that prints the
 decoded frames.
 
-It can also be embedded: `import { startServer } from 'nodexr-monado-web-remote'` returns
-`{ config, server, ready, close }`; the packet encoder is available as `nodexr-monado-web-remote/protocol`.
+It can also be embedded: `import { startServer } from '@kirknock/nodexr-monado-web-remote'` returns
+`{ config, server, ready, close }`; the packet encoder is available as `@kirknock/nodexr-monado-web-remote/protocol`.
 
 ## Development
 
@@ -46,7 +46,7 @@ npm install
 npm start          # same as the CLI, options after --: npm start -- -P 9292
 npm run mock
 npm test
-npm pack           # builds nodexr-monado-web-remote-<version>.tgz (runs the tests first)
+npm pack           # builds kirknock-nodexr-monado-web-remote-<version>.tgz (runs the tests first)
 ```
 
 ## Controls

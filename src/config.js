@@ -9,12 +9,13 @@ import { fileURLToPath } from 'node:url';
 export const PACKAGE_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const PACKAGE_JSON = JSON.parse(fs.readFileSync(path.join(PACKAGE_ROOT, 'package.json'), 'utf8'));
 export const DEFAULT_FILE = path.join(PACKAGE_ROOT, 'config', 'default.json');
+/** Command and settings folder name; fixed so it does not follow the scoped npm package name. */
+export const APP_NAME = 'nodexr-monado-web-remote';
 
 /** Same locations as remote-mndset: %APPDATA%\<name> on Windows, $XDG_CONFIG_HOME or ~/.config/<name> elsewhere. */
 export function configDir() {
-  const name = PACKAGE_JSON.name;
-  if (process.platform === 'win32' && process.env.APPDATA) return path.join(process.env.APPDATA, name);
-  return path.join(process.env.XDG_CONFIG_HOME || path.join(os.homedir(), '.config'), name);
+  if (process.platform === 'win32' && process.env.APPDATA) return path.join(process.env.APPDATA, APP_NAME);
+  return path.join(process.env.XDG_CONFIG_HOME || path.join(os.homedir(), '.config'), APP_NAME);
 }
 
 export const defaultSettingsFile = () => process.env.SETTINGS_FILE || path.join(configDir(), 'settings.json');
