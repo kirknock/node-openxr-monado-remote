@@ -19,6 +19,9 @@ Without installing: `npx nodexr-monado-web-remote`.
 
 Open the page, check host/port (default `127.0.0.1:4242`), press **Connect**, start your OpenXR app.
 
+![Control page with HMD, left and right controller panels, and an OpenXR app running on Monado in front](screenshot.png)
+
+
 ```
 nodexr-monado-web-remote [options]
   -H, --host <addr>        address for the web page        (default 0.0.0.0, env HTTP_HOST)
