@@ -1,0 +1,54 @@
+{
+  "name": "nodexr-monado-web-remote",
+  "version": "0.3.0",
+  "description": "Web control panel for Monado's remote driver: move the simulated HMD and controllers with on-screen buttons (Node.js port of remote-mndset).",
+  "keywords": [
+    "monado",
+    "openxr",
+    "xr",
+    "vr",
+    "remote",
+    "simulator",
+    "hmd",
+    "controller"
+  ],
+  "license": "BSL-1.0",
+  "author": "kirknock",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirknock/node-openxr-monado-remote.git"
+  },
+  "type": "module",
+  "main": "src/server.js",
+  "exports": {
+    ".": "./src/server.js",
+    "./protocol": "./src/protocol.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "nodexr-monado-web-remote": "bin/cli.js",
+    "nodexr-monado-mock": "tools/mock-monado.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "public/",
+    "tools/",
+    "config/default.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.3"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "dev": "node --watch bin/cli.js",
+    "mock": "node tools/mock-monado.js",
+    "test": "node --test test/*.test.js",
+    "prepack": "npm test"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

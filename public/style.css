@@ -1,0 +1,104 @@
+:root {
+  --bg: #f3f5f7;
+  --card: #ffffff;
+  --text: #1d2329;
+  --muted: #65707b;
+  --border: #d5dbe1;
+  --btn: #eef1f4;
+  --btn-hover: #e2e7ec;
+  --accent: #2f6fde;
+  --accent-text: #ffffff;
+  --active: #ff8a1f;
+  --ok: #2fa84f;
+  --warn: #d9a400;
+  --err: #d64545;
+  --hmd: #6a4fd8;
+  --left: #1e8fc9;
+  --right: #d0532f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15181c;
+    --card: #1e2227;
+    --text: #e6e9ec;
+    --muted: #9aa4ae;
+    --border: #343a42;
+    --btn: #2a3037;
+    --btn-hover: #343b44;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 12px 16px 24px;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+h1 { font-size: 18px; margin: 0 16px 0 0; }
+h2 { font-size: 15px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+small { color: var(--muted); font-weight: normal; }
+input { font: inherit; padding: 4px 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--text); }
+button {
+  font: inherit;
+  color: var(--text);
+  background: var(--btn);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+button:hover { background: var(--btn-hover); }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 10px; }
+.bar.sub { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.conn, .group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.check { display: inline-flex; align-items: center; gap: 4px; }
+.label { color: var(--muted); }
+.led { width: 12px; height: 12px; border-radius: 50%; background: var(--err); display: inline-block; }
+.led.connecting { background: var(--warn); }
+.led.connected { background: var(--ok); box-shadow: 0 0 6px var(--ok); }
+.warn { color: var(--err); width: 100%; }
+.hint { color: var(--muted); margin: 0; width: 100%; }
+.seg { display: inline-flex; }
+.seg button { border-radius: 0; margin-left: -1px; }
+.seg button:first-child { border-radius: 8px 0 0 8px; }
+.seg button:last-child { border-radius: 0 8px 8px 0; }
+.seg button.on { background: var(--accent); color: var(--accent-text); border-color: var(--accent); position: relative; }
+
+.panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.card.hmd { border-top: 4px solid var(--hmd); }
+.card.left { border-top: 4px solid var(--left); }
+.card.right { border-top: 4px solid var(--right); }
+.card .latch { margin-left: auto; font-size: 12px; font-weight: normal; }
+.cluster { margin-bottom: 12px; }
+.cluster h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 6px; }
+.pad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.row { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px; }
+.hold {
+  min-height: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  line-height: 1.2;
+}
+.hold .k { font-size: 11px; color: var(--muted); }
+.hold.active { background: var(--active); border-color: var(--active); color: #000; }
+.hold.active .k { color: #3a2200; }
+.hold.remote { outline: 2px dashed var(--active); outline-offset: -3px; }
+.hold.disabled { opacity: .45; }
+.spacer { visibility: hidden; }
+.readout { font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); white-space: pre; overflow-x: auto; margin: 0; }
+
+.settings { margin-top: 12px; }
+.sliders { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 24px; }
+.sliders label { display: grid; grid-template-columns: 1fr 3.5em; gap: 4px 8px; align-items: center; }
+.sliders input[type=range] { grid-column: 1 / -1; width: 100%; padding: 0; }
+.sliders output { text-align: right; font-variant-numeric: tabular-nums; }
+footer { margin-top: 12px; }

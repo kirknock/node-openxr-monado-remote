@@ -1,0 +1,5 @@
+node_modules/
+config/settings.json
+*.log
+*.tgz
+.idea/

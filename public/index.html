@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Monado Web Remote</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <h1>Monado Web Remote</h1>
+  <div class="conn">
+    <span id="led" class="led" title="Connection state"></span>
+    <span id="connText">disconnected</span>
+    <label>Host <input id="host" size="14" spellcheck="false"></label>
+    <label>Port <input id="port" type="number" min="1" max="65535" style="width:6em"></label>
+    <label class="check"><input id="autoReconnect" type="checkbox"> auto-reconnect</label>
+    <button id="connectBtn" class="primary">Connect</button>
+  </div>
+  <div id="wsWarn" class="warn" hidden>Lost connection to the Node server — reconnecting…</div>
+</header>
+
+<section class="bar sub">
+  <div class="group">
+    <span class="label">Thumbstick emulation <small>(Tab)</small>:</span>
+    <div class="seg" id="stickMode">
+      <button data-mode="off">Off — HMD moves</button>
+      <button data-mode="left">Left stick</button>
+      <button data-mode="right">Right stick</button>
+    </div>
+  </div>
+  <div class="group">
+    <label class="check"><input id="latch" type="checkbox"> Latch mode (click toggles a button on/off)</label>
+    <button id="releaseAll">Release all</button>
+    <button id="resetBtn">Reset poses</button>
+  </div>
+  <p id="stickHint" class="hint"></p>
+</section>
+
+<main id="panels" class="panels"></main>
+
+<section class="card settings">
+  <h2>Settings</h2>
+  <div id="sliders" class="sliders"></div>
+</section>
+
+<footer class="hint">
+  Hold a button to move — release to stop. Movement buttons on the HMD panel map to remote-mndset keys with no modifier,
+  the Left/Right controller panels map to LShift / LAlt. Multi-touch is supported.
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
